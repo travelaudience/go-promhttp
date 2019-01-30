@@ -2,6 +2,10 @@
 
 go-promhttp provides wrappers around the http package objects for monitoring with Prometheus, namely the http.Client, and http.Handler.
 
+### Requirements
+
+minimum golang version of `1.9`
+
 ## Wrapping the http.Client
 For example, you can instrument your http requests sent using the promhttp.Client as follows:
 
@@ -56,7 +60,7 @@ And all of these metrics in our example would have the label `"path": "/issues"`
 
 ## Contributing
 
-Contributions are welcomed! Read the [Contributing Guide](CONTRIBUTING.md) for more information.
+Contributions are welcomed! Read the [Contributing Guide](.github/CONTRIBUTING.md) for more information.
 
 ## Licensing
 
