@@ -79,16 +79,16 @@ func instrumentClientWithConstLabels(namespace string, c *http.Client, reg prome
 
 	trace := &pph.InstrumentTrace{
 		DNSStart: func(t float64) {
-			i.dnsDuration.WithLabelValues("dns_start")
+			i.dnsDuration.WithLabelValues("dns_start").Observe(t)
 		},
 		DNSDone: func(t float64) {
-			i.dnsDuration.WithLabelValues("dns_done")
+			i.dnsDuration.WithLabelValues("dns_done").Observe(t)
 		},
 		TLSHandshakeStart: func(t float64) {
-			i.tlsDuration.WithLabelValues("tls_handshake_start")
+			i.tlsDuration.WithLabelValues("tls_handshake_start").Observe(t)
 		},
 		TLSHandshakeDone: func(t float64) {
-			i.tlsDuration.WithLabelValues("tls_handshake_done")
+			i.tlsDuration.WithLabelValues("tls_handshake_done").Observe(t)
 		},
 	}
 
