@@ -22,13 +22,13 @@ resp, err := githubClient.Get("https://api.github.com/repos/travelaudience/go-pr
 
 Doing so will give you prometheus metrics such as:
 
-| metric                             | description                               |
-|------------------------------------|-------------------------------------------|
-| requests_total                     | A counter for outgoing requests.          |
-| request_duration_histogram_seconds | A histogram of outgoing request latencies. |
-| dns_duration_histogram_seconds     | Trace dns latency histogram.              |
-| tls_duration_histogram_seconds     | Trace tls latency histogram.              |
-| in_flight_requests                 | A gauge of in-flight outgoing requests.    |
+| metric                                             | description                                |
+|----------------------------------------------------|--------------------------------------------|
+| `http_outgoing_requests_total`                     | A counter for outgoing requests.           |
+| `http_outgoing_request_duration_histogram_seconds` | A histogram of outgoing request latencies. |
+| `http_outgoing_dns_duration_histogram_seconds`     | Trace dns latency histogram.               |
+| `http_outgoing_tls_duration_histogram_seconds`     | Trace tls latency histogram.               |
+| `http_outgoing_in_flight_requests`                 | A gauge of in-flight outgoing requests.    |
 
 By calling httpClient.ForRecipient("github"), all of these metrics will be tagged with the label `"recipient": "github"`
 
