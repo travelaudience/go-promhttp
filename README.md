@@ -57,6 +57,9 @@ we have the mux handle incoming requests and generating metrics. The metrics gen
 
 And all of these metrics in our example would have the label `"path": "/issues"`.
 
+## API Reference
+
+See [pkg.go.dev](https://pkg.go.dev/github.com/travelaudience/go-promhttp?tab=doc).
 
 ## Contributing
 
