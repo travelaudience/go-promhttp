@@ -33,7 +33,7 @@ Doing so will give you prometheus metrics such as:
 By calling httpClient.ForRecipient("github"), all of these metrics will be tagged with the label `"recipient": "github"`
 
 ## Wrapping the http.Handler
-Simmilarly, a http.Handler can be instrumented for monitoring via the promhttp.ServeMux. By running the following code,
+Similarly, a http.Handler can be instrumented for monitoring via the promhttp.ServeMux. By running the following code,
 
 ``` go
 mux := &promhttp.ServeMux {
