@@ -23,6 +23,12 @@ func (c *Client) ForRecipient(recipient string) (*http.Client, error) {
 	})
 }
 
+// ForConstLabels allocates new client based on base one with incomingInstrumentation.
+// Given constLabels is used as a constant label.
+func (c *Client) ForConstLabels(constLabels map[string]string) (*http.Client, error) {
+	return instrumentClientWithConstLabels(c.Namespace, c.Client, c.Registerer, constLabels)
+}
+
 func instrumentClientWithConstLabels(namespace string, c *http.Client, reg prometheus.Registerer, constLabels map[string]string) (*http.Client, error) {
 	i := &outgoingInstrumentation{
 		requests: prometheus.NewCounterVec(
